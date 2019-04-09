@@ -1,0 +1,34 @@
+<form id="container"
+#f="ngForm"
+(submit)="onSubmit(f)"
+fxLayout="column"
+fxLayoutAlign="center center"
+fxLayoutGap="15px">
+
+  <mat-form-field>
+    <input type="email"
+    matInput
+    name="email"
+    ngModel
+    placeholder="Enter e-mail"
+    email
+    required>
+    <mat-error>Error e-mail.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field hintLabel="Should be at last 7 characters long.">
+      <input type="password"
+      matInput
+      name="password"
+       ngModel
+       placeholder="Your password"
+       required
+       minlength="7"
+       #pwInput="ngModel">
+       <mat-hint align="end">{{ pwInput.value?.length }} / 7</mat-hint>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Submit</button>
+
+
+</form>

@@ -1,11 +1,14 @@
     <mat-list>
-      <a mat-list-item [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="closeSidenav()">
+      <a mat-list-item [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="closeSidenav()" *ngIf="!isAuth">
         <mat-icon>face</mat-icon> Login
       </a>
-      <a mat-list-item [routerLink]="['/signup']" routerLinkActive="router-link-active" (click)="closeSidenav()">
+      <a mat-list-item [routerLink]="['/signup']" routerLinkActive="router-link-active" (click)="closeSidenav()" *ngIf="!isAuth">
         <mat-icon>input</mat-icon> Sign Up
       </a>
-      <a mat-list-item [routerLink]="['/train']" routerLinkActive="router-link-active" (click)="closeSidenav()">
+      <a mat-list-item [routerLink]="['/']" routerLinkActive="router-link-active" (click)="closeSidenav()" *ngIf="isAuth">
+        <mat-icon>face</mat-icon> Logout
+      </a>
+      <a mat-list-item [routerLink]="['/training']" routerLinkActive="router-link-active" (click)="closeSidenav()" *ngIf="isAuth">
         <mat-icon>fitness_center</mat-icon> Training
       </a>
     </mat-list>

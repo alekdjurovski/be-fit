@@ -8,13 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  form: FormGroup;
+  loginForm: FormGroup;
 
   constructor(private _authService: AuthService) {}
 
   ngOnInit() {
-    this.form = new FormGroup({
+    this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
       }),
@@ -24,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this._authService.login({
-      email: this.form.value.email,
-      password: this.form.value.password
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
     });
   }
 

@@ -13,7 +13,7 @@ import { CurrentTrainingComponent } from './components/training/current-training
 import { NewTrainingComponent } from './components/training/new-training/new-training.component';
 import { PastTrainingComponent } from './components/training/past-training/past-training.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/navigation/sidenav/sidenav.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { StopTrainingComponent } from './components/training/stop-training/stop-training.component';
@@ -36,6 +36,7 @@ import { AuthService } from './services/auth.service';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

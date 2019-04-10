@@ -8,8 +8,9 @@
   </div>
   <div [routerLink]="['/']" routerLinkActive="router-link-active">LOGO</div>
   <div fxFlex fxLayout fxLayoutGap="15px" fxLayoutAlign="flex-end" fxHide.xs>
-    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
-    <a [routerLink]="['/signup']" routerLinkActive="router-link-active">Sign Up</a>
-    <a [routerLink]="['/train']" routerLinkActive="router-link-active">Training</a>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active"  *ngIf="!isAuth">Login</a>
+    <a [routerLink]="['/signup']" routerLinkActive="router-link-active" *ngIf="!isAuth">Sign Up</a>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active"  *ngIf="isAuth" (click)="logout()">Logout</a>
+    <a [routerLink]="['/training']" routerLinkActive="router-link-active"  *ngIf="isAuth">Training</a>
   </div>
 </mat-toolbar>
